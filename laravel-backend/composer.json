@@ -7,12 +7,14 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.2",
+        "kornrunner/keccak": "^1.1",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.1",
         "laravel/tinker": "^2.8",
-        "web3p/web3.php": "^0.1.5",
-        "kornrunner/keccak": "^1.1",
-        "simplito/elliptic-php": "^1.0"
+        "pusher/pusher-php-server": "^7.2",
+        "simplito/elliptic-php": "^1.0",
+        "textalk/websocket": "^1.5",
+        "web3p/web3.php": "^0.1.5"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

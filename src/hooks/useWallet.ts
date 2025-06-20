@@ -33,11 +33,12 @@ export const useWallet = () => {
       // Log wallet connection
       await apiService.logWalletView(address);
 
-      // Fetch wallet info
+      // Fetch wallet info and history
       setIsLoadingInfo(true);
       try {
         const info = await apiService.getWalletInfo(address);
-        setWalletInfo(info);
+        const history = await apiService.getWalletHistory(address);
+        setWalletInfo({ ...info, balanceHistory: history });
       } catch (error) {
         console.error('Failed to fetch wallet info:', error);
       } finally {
@@ -69,7 +70,8 @@ export const useWallet = () => {
     setIsLoadingInfo(true);
     try {
       const info = await apiService.getWalletInfo(connectionState.address);
-      setWalletInfo(info);
+      const history = await apiService.getWalletHistory(connectionState.address);
+      setWalletInfo({ ...info, balanceHistory: history });
     } catch (error) {
       console.error('Failed to refresh wallet info:', error);
     } finally {

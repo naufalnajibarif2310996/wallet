@@ -26,6 +26,7 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
+        '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
@@ -59,6 +60,7 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+            'WebSocket\\' => 10,
             'Web3\\' => 5,
         ),
         'T' => 
@@ -110,6 +112,7 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         ),
         'P' => 
         array (
+            'Pusher\\' => 7,
             'Psy\\' => 4,
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
@@ -207,6 +210,10 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'WebSocket\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/textalk/websocket/lib',
         ),
         'Web3\\' => 
         array (
@@ -365,6 +372,10 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         'Ramsey\\Collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
+        'Pusher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pusher/pusher-php-server/src',
         ),
         'Psy\\' => 
         array (
@@ -568,12 +579,19 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\ListenEthereumTransactions' => __DIR__ . '/../..' . '/app/Console/Commands/ListenEthereumTransactions.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Api\\WalletController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/WalletController.php',
         'App\\Http\\Controllers\\Api\\Web3LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Web3LoginController.php',
+        'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Cors' => __DIR__ . '/../..' . '/app/Http/Middleware/Cors.php',
+        'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
+        'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
+        'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
+        'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Transaction' => __DIR__ . '/../..' . '/app/Models/Transaction.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Wallet' => __DIR__ . '/../..' . '/app/Models/Wallet.php',
@@ -5236,6 +5254,13 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
         'Psy\\VersionUpdater\\SelfUpdate' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/SelfUpdate.php',
+        'Pusher\\ApiErrorException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/ApiErrorException.php',
+        'Pusher\\Pusher' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Pusher.php',
+        'Pusher\\PusherCrypto' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherCrypto.php',
+        'Pusher\\PusherException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherException.php',
+        'Pusher\\PusherInstance' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInstance.php',
+        'Pusher\\PusherInterface' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInterface.php',
+        'Pusher\\Webhook' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Webhook.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',
@@ -6993,6 +7018,21 @@ class ComposerStaticInita451f56bee37e4bca423e606ec3770eb
         'Web3\\Validators\\TagValidator' => __DIR__ . '/..' . '/web3p/web3.php/src/Validators/TagValidator.php',
         'Web3\\Validators\\TransactionValidator' => __DIR__ . '/..' . '/web3p/web3.php/src/Validators/TransactionValidator.php',
         'Web3\\Web3' => __DIR__ . '/..' . '/web3p/web3.php/src/Web3.php',
+        'WebSocket\\BadOpcodeException' => __DIR__ . '/..' . '/textalk/websocket/lib/BadOpcodeException.php',
+        'WebSocket\\BadUriException' => __DIR__ . '/..' . '/textalk/websocket/lib/BadUriException.php',
+        'WebSocket\\Base' => __DIR__ . '/..' . '/textalk/websocket/lib/Base.php',
+        'WebSocket\\Client' => __DIR__ . '/..' . '/textalk/websocket/lib/Client.php',
+        'WebSocket\\ConnectionException' => __DIR__ . '/..' . '/textalk/websocket/lib/ConnectionException.php',
+        'WebSocket\\Exception' => __DIR__ . '/..' . '/textalk/websocket/lib/Exception.php',
+        'WebSocket\\Message\\Binary' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Binary.php',
+        'WebSocket\\Message\\Close' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Close.php',
+        'WebSocket\\Message\\Factory' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Factory.php',
+        'WebSocket\\Message\\Message' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Message.php',
+        'WebSocket\\Message\\Ping' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Ping.php',
+        'WebSocket\\Message\\Pong' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Pong.php',
+        'WebSocket\\Message\\Text' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Text.php',
+        'WebSocket\\Server' => __DIR__ . '/..' . '/textalk/websocket/lib/Server.php',
+        'WebSocket\\TimeoutException' => __DIR__ . '/..' . '/textalk/websocket/lib/TimeoutException.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\InvalidArgumentException' => __DIR__ . '/..' . '/webmozart/assert/src/InvalidArgumentException.php',
         'Webmozart\\Assert\\Mixin' => __DIR__ . '/..' . '/webmozart/assert/src/Mixin.php',

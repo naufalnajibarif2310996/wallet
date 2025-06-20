@@ -190,4 +190,30 @@ class WalletController extends Controller
         $balance = app(Web3Service::class)->getBalance($address);
         return response()->json(['balance' => $balance]);
     }
+
+    /**
+     * Get wallet transaction history for chart
+     * GET /api/wallet/{address}/history
+     */
+    public function history(Request $request, $address): JsonResponse
+    {
+        try {
+            $network = $request->get('network', 'ethereum');
+            $days = $request->get('days', 30);
+
+            // Menggunakan WalletService untuk mendapatkan histori saldo dari database
+            $walletService = app(WalletService::class);
+            $historyData = $walletService->getBalanceHistory($address, $network, $days);
+
+            return response()->json([
+                'success' => true,
+                'data' => $historyData
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to fetch wallet history: ' . $e->getMessage()
+            ], 500);
+        }
+    }
 }

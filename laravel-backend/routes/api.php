@@ -35,6 +35,9 @@ Route::prefix('wallet')->group(function () {
     
     // Log wallet view
     Route::post('/log', [WalletController::class, 'logView']);
+
+    // Get wallet transaction history for chart
+    Route::get('/{address}/history', [WalletController::class, 'history']);
 });
 
 // Get supported networks

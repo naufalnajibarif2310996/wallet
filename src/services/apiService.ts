@@ -50,18 +50,14 @@ class ApiService {
             type: tx.type,
             amount: tx.amount,
             amountUSD: tx.amount_usd,
-            to: tx.to,
-            from: tx.from,
-            timestamp: tx.timestamp,
+            to: tx.to_address,
+            from: tx.from_address,
+            timestamp: tx.block_timestamp,
             status: tx.status,
             gasUsed: tx.gas_used?.toString(),
             gasPrice: tx.gas_price?.toString()
           })),
-          balanceHistory: data.balance_history.map((point: any) => ({
-            date: point.date,
-            balance: point.balance,
-            balanceUSD: point.balance_usd
-          }))
+          balanceHistory: []
         };
 
         return walletInfo;
@@ -97,6 +93,29 @@ class ApiService {
     } catch (error) {
       console.error('Error refreshing wallet data:', error);
       throw new Error('Failed to refresh wallet data');
+    }
+  }
+
+  async getWalletHistory(address: string, network: string = 'ethereum'): Promise<BalanceHistoryPoint[]> {
+    try {
+      const response = await this.axiosInstance.get(`/wallet/${address}/history`, {
+        params: { network }
+      });
+
+      if (response.data.success) {
+        // API now returns { date, balance, balance_usd }
+        // which matches the BalanceHistoryPoint type.
+        return response.data.data.map((point: any) => ({
+          date: point.date,
+          balance: point.balance,
+          balanceUSD: point.balance_usd,
+        }));
+      } else {
+        throw new Error(response.data.message || 'Failed to fetch wallet history');
+      }
+    } catch (error) {
+      console.error('Error fetching wallet history:', error);
+      return []; // Return empty array on error
     }
   }
 
